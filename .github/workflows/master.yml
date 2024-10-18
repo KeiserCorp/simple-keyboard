@@ -26,11 +26,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease
 
-    - name: List APKs
-      run: ls -R ./app/build/outputs/apk/release
-
     - name: Archive APK
       run: mkdir -p ./build/apk && cp ./app/build/outputs/apk/release/*.apk ./build/apk/
+
+    - name: List APKs in build/apk
+      run: ls -R ./build/apk
 
     - name: Upload APK as artifact
       uses: actions/upload-artifact@v3
