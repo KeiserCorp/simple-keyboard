@@ -29,6 +29,10 @@ jobs:
     - name: Archive APK
       run: mkdir -p ./build/apk && cp ./app/build/outputs/apk/release/*.apk ./build/apk/
 
+    - name: Set APK path
+      id: apk_path
+      run: echo "APK_PATH=$(find ./build/apk -name '*.apk')" >> $GITHUB_ENV
+
     - name: Get version from Gradle
       run: echo "VERSION_NAME=$(./gradlew -q printVersionName)" >> $GITHUB_ENV
 
@@ -45,6 +49,6 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/apk/*.apk
+        asset_path: ${{ env.APK_PATH }}
         asset_name: app-release.apk
         asset_content_type: application/vnd.android.package-archive
