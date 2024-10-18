@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-release:
-    name: Build and Release Android APK
+    name: Build and Release APK
     runs-on: ubuntu-latest
 
     steps:
@@ -52,5 +52,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ env.APK_PATH }}
-          asset_name: app-release.apk
+          asset_name: simple-keyboard.apk
           asset_content_type: application/vnd.android.package-archive
