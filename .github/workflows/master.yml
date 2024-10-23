@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Archive APK
-        run: mkdir -p ./build/apk && cp ./app/build/outputs/apk/release/*.apk ./build/apk/
+        run: mkdir -p ./build/apk && cp ./app/build/outputs/apk/debug/*.apk ./build/apk/
 
       - name: Set APK path
         id: apk_path
