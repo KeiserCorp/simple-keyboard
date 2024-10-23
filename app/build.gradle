@@ -7,14 +7,18 @@ android {
         applicationId "rkr.simplekeyboard.inputmethod"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 7
-        versionName "1.6.0"
+        versionCode 8
+        versionName "1.6.1"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        // release {
+        //     minifyEnabled true
+        //     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        // }
     }
     namespace 'rkr.simplekeyboard.inputmethod'
 }
