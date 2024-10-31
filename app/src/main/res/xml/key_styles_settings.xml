@@ -23,7 +23,5 @@
 >
     <key-style
         latin:styleName="settingsMoreKeysStyle"
-        latin:keyLabelFlags="hasPopupHint"
-        latin:additionalMoreKeys="!text/keyspec_settings"
         latin:backgroundType="functional" />
 </merge>
